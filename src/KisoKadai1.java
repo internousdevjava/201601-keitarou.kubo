@@ -7,6 +7,7 @@ public class KisoKadai1 {
 		   System.out.println("xの値を入れてください。");
 		   int x = new java.util.Scanner(System.in).nextInt();
 
+
 		   System.out.println("yの値を入れてください。");
 		   int y = new java.util.Scanner(System.in).nextInt();
 		   for( int i=1; i<=x; i ++) {

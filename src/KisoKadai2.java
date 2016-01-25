@@ -3,7 +3,7 @@ public class KisoKadai2 {
 
 
 	System.out.println("数当てゲーム");
- int ans = new java.util.Random().nextInt(10);
+ int ans = new java.util.Random().nextInt(100);
  for (int i = 0; i< 10; i++){
 	 System.out.println("1～100の数字を入力して下さい★");
      int num = new java.util.Scanner(System.in).nextInt();
@@ -12,6 +12,12 @@ public class KisoKadai2 {
     	  break;
      }else{
     	 System.out.println("違います！");
+
+    	 if(ans > num){
+    		 System.out.println("大きいです");
+    	 }else if(ans < num){
+    		 System.out.println("小さいです");
+    	 }
      }
  }
 System.out.println("終了～");
