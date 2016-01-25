@@ -9,21 +9,33 @@ class KisoKadai3{
 
 
 public static void main(String args[]){
+
+int x = 1;
+	while (x ==1) {
 	  System.out.println
-		("[メニュー] 1:読み込み 2:新規作成 3:上書き");
+		("[メニュー] 1:読み込み 2:新規作成 3:上書き 4:終了");
 	    int selected = new java.util.Scanner(System.in).nextInt();
 switch (selected) {
 case 1:
+	x = 1;
 	Read();
 	break;
 case 2:
+	x = 1;
 	Newfile();
 	break;
 case 3:
+	x = 1;
 	Write();
-break;
-  }
+     break;
+case 4:
+	x =2;
+	System.out.println("終了します");
+	break;
 }
+
+      }
+	}
  public static void Read(){
 	 String file = new java.util.Scanner(System.in).nextLine();
 	  try{  FileReader filereader = new FileReader("C:\\Users\\internous/\\" + file);
