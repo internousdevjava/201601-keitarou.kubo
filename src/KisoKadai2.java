@@ -1,3 +1,4 @@
+
 public class KisoKadai2 {
 	public static void main(String[] args){
 
