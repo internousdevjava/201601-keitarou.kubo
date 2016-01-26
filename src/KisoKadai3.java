@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 class KisoKadai3{
 
@@ -22,7 +23,7 @@ case 1:
 	break;
 case 2:
 	x = 1;
-	Newfile();
+	Create();
 	break;
 case 3:
 	x = 1;
@@ -39,7 +40,7 @@ case 4:
  public static void Read(){
 	 String file = new java.util.Scanner(System.in).nextLine();
 	  try{  FileReader filereader = new FileReader("C:\\Users\\internous/\\" + file);
-
+	  System.out.println("ファイル名を入力");
       int i;
        while((i = filereader.read()) != -1){
          System.out.print((char)i);
@@ -55,9 +56,16 @@ case 4:
 
 
 
-public static void Newfile(){
+public static void Create(){
+	System.out.println("ファイルを作成します");
+	System.out.println("ファイル名を記入して下さい");
+	String namefile = new Scanner(System.in).nextLine();
+	String fileplase ="C:\\users\\internous\\";
+	 File newfile = new File( fileplase + namefile);
+
+
     String file = new java.util.Scanner(System.in).nextLine();
-	File newfile = new File("C:\\Users\\internous\\" + file);
+
 
  try{
    if (newfile.createNewFile()){
@@ -71,14 +79,22 @@ public static void Newfile(){
  }
 
 public static void Write(){
+
   try{
-       File file1 = new File("C:/Users/internous/hello.txt");
+	  System.out.println("上書きしたいファイル名を入力して下さい");
+	  System.out.println("絶対パスでファイル名を入力して下さい。");
+	  String kubo2 =new Scanner(System.in).nextLine();
+	  File file = new File(kubo2);
 
-       if (checkBeforeWritefile(file1)){
-         FileWriter filewriter = new FileWriter(file1, true);
+	  checkBeforeWritefile(file);
 
-         filewriter.write("テスト\r\n");
-         filewriter.write("ではまた\r\n");
+       if (checkBeforeWritefile(file)){
+         FileWriter filewriter = new FileWriter(file,true);
+
+         System.out.println("内容を入力して下さい");
+
+         String kubo =new Scanner(System.in).nextLine();
+         filewriter.write(kubo);
 
          filewriter.close();
          System.out.println("書き込み終了しました");
